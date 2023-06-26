@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:umang2/cameraview.dart';
-import 'package:umang2/home.dart';
+// import 'package:umang2/home.dart';
 import 'package:umang2/listview2.dart';
 import 'package:umang2/mytabs.dart';
 import 'package:umang2/photoselect.dart';
 import 'package:camera/camera.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:umang2/whatsapplogo.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 late List<CameraDescription> _cameras;
 
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xff128C7E)
         )
       ),
-      home: listview2()
+      home: logo()
     );
   }
 }
