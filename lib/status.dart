@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:umang2/main.dart';
 import 'package:umang2/personalstatus.dart';
+import 'package:umang2/photoselect.dart';
 class status extends StatefulWidget {
   const status({Key? key}) : super(key: key);
 
@@ -38,16 +40,21 @@ class _statusState extends State<status> {
                         ),
                       ),
                     Positioned(
-                      bottom: 5,
+                      bottom: 3,
                       right:1,
                         child: Container(
                             decoration: BoxDecoration(
                               color: Colors.green,
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              borderRadius: BorderRadius.all(Radius.circular(15)),
                             ),
-                            height: 20,
-                            width: 20,
-                            child: Center(child: Icon(Icons.add))
+                            height: 28,
+                            width: 30,
+                            child: IconButton(onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Cameraapp()));
+                            },
+                                icon: Icon(Icons.add,
+                                color: Colors.black,
+                                size: 25,))
                         ),
                     )
               ]
