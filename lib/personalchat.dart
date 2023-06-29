@@ -80,7 +80,7 @@ class _PersonalchatState extends State<Personalchat> {
                         PopupMenuItem(child: Text("mute notifications")),
                         PopupMenuItem(child: Text("Disappearing message")),
                         PopupMenuItem(child: Text("Wallpaper")),
-                        PopupMenuItem(child: 
+                        PopupMenuItem(child:
                         PopupMenuItem(child: Text('More'))),
                       ])
             ],
