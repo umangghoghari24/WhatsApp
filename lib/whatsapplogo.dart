@@ -47,7 +47,7 @@ class _logoState extends State<logo> {
               // width: MediaQuery.of(context).size.width-320,
             ),
             Text('Whatsapp'),
-            SizedBox(height: 350,),
+            SizedBox(height: 300,),
             Text('Form',
                         style: TextStyle(
                             fontSize: 18,fontWeight: FontWeight.bold),),

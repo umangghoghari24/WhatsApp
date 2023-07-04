@@ -56,8 +56,24 @@ class _personalsmsState extends State<personalsms> {
       });
     }
 
+
+    Widget MyEmoji() {
+      return Container(
+        child: Offstage(
+          offstage: hideemoji,
+          child: SizedBox(
+              width: MediaQuery.of(context).size.width -20,
+              height: 250,
+              child: EmojiPicker(
+                textEditingController: message,
+              )),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
+
         leading: CircleAvatar(
           child: Text(widget.contacts.initials()),
           radius: 35,
@@ -68,6 +84,7 @@ class _personalsmsState extends State<personalsms> {
             Text(widget.contacts.displayName.toString()),
           ],
         ),
+
         actions: [
           Row(
             children: [
@@ -86,8 +103,7 @@ class _personalsmsState extends State<personalsms> {
                         PopupMenuItem(child: Text("mute notifications")),
                         PopupMenuItem(child: Text("Disappearing message")),
                         PopupMenuItem(child: Text("Wallpaper")),
-                        PopupMenuItem(child:
-                        PopupMenuItem(child: Text('More'))),
+                        PopupMenuItem(child: Text('More')),
                       ])
                 ],
               )
@@ -205,20 +221,9 @@ class _personalsmsState extends State<personalsms> {
         )
 
     );
+
   }
-  Widget MyEmoji() {
-    return Container(
-      child: Offstage(
-        // offstage: hideemoji,
-        child: SizedBox(
-            width: MediaQuery.of(context).size.width -20,
-            height: 250,
-            child: EmojiPicker(
-              // textEditingController: message,
-            )),
-      ),
-    );
-  }
+
   Widget Bottommodal() {
     return Container(
       height: 250,

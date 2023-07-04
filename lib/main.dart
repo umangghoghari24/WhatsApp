@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xff128C7E)
         )
       ),
+
       home: logo()
     );
   }
