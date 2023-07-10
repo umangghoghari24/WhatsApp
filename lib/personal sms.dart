@@ -55,8 +55,6 @@ class _personalsmsState extends State<personalsms> {
         }
       });
     }
-
-
     Widget MyEmoji() {
       return Container(
         child: Offstage(
@@ -84,7 +82,6 @@ class _personalsmsState extends State<personalsms> {
             Text(widget.contacts.displayName.toString()),
           ],
         ),
-
         actions: [
           Row(
             children: [
@@ -115,11 +112,11 @@ class _personalsmsState extends State<personalsms> {
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: [
-              Image.network('https://mcdn.wallpapersafari.com/medium/27/32/jt4AoG.jpg',
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.cover,
-              ),
+              // Image.network('https://mcdn.wallpapersafari.com/medium/27/32/jt4AoG.jpg',
+              //   height: MediaQuery.of(context).size.height,
+              //   width: MediaQuery.of(context).size.width,
+              //   fit: BoxFit.cover,
+              // ),
               ListView(),
               Align(
                   alignment: Alignment.bottomLeft,
@@ -133,14 +130,14 @@ class _personalsmsState extends State<personalsms> {
                         });
                       }
                       return Future.value();
-                    },
+                      },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Row(
                           children: [
                             Container(
-                              width: MediaQuery.of(context).size.width -50,
+                              width: MediaQuery.of(context).size.width -40,
                               child: Card(
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(25)
@@ -212,7 +209,7 @@ class _personalsmsState extends State<personalsms> {
                                 ))
                           ],
                         ),
-                        MyEmoji(),
+                        MyEmoji()
                       ],
                     ),
                   )),

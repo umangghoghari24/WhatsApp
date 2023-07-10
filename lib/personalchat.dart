@@ -10,45 +10,45 @@ class Personalchat extends StatefulWidget {
 }
 
 class _PersonalchatState extends State<Personalchat> {
-  FocusNode messagefocuce = FocusNode();
-  TextEditingController message = TextEditingController();
-  TextEditingController textarea = TextEditingController();
-  TextEditingController emoji= TextEditingController();
-  late bool hideemoji = true;
-  FocusNode focusNode = FocusNode();
-  bool isShow = true;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-    focusNode.addListener(() {
-      if (focusNode.hasFocus) {
-        setState(() {
-          hideemoji = true;
-        });
-      } else {
-        setState(() {
-          hideemoji = false;
-        });
-      }
-    });
-    textarea.addListener(() {
-      if (textarea.text != '') {
-        setState(() {
-          isShow = false;
-        });
-        setState(() {
-          isShow = false;
-        });
-      } else {
-        setState(() {
-          isShow = true;
-        });
-      }
-    });
-  }
+  // FocusNode messagefocuce = FocusNode();
+  // TextEditingController message = TextEditingController();
+  // TextEditingController textarea = TextEditingController();
+  // TextEditingController emoji= TextEditingController();
+  // late bool hideemoji = true;
+  // FocusNode focusNode = FocusNode();
+  // bool isShow = true;
+  //
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //
+  //   focusNode.addListener(() {
+  //     if (focusNode.hasFocus) {
+  //       setState(() {
+  //         hideemoji = true;
+  //       });
+  //     } else {
+  //       setState(() {
+  //         hideemoji = false;
+  //       });
+  //     }
+  //   });
+  //   textarea.addListener(() {
+  //     if (textarea.text != '') {
+  //       setState(() {
+  //         isShow = false;
+  //       });
+  //       setState(() {
+  //         isShow = false;
+  //       });
+  //     } else {
+  //       setState(() {
+  //         isShow = true;
+  //       });
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -98,100 +98,100 @@ class _PersonalchatState extends State<Personalchat> {
               fit: BoxFit.cover,
             ),
             ListView(),
-            Align(
-                alignment: Alignment.bottomLeft,
-                child: WillPopScope(
-                  onWillPop: () {
-                    if (hideemoji == true) {
-                      Navigator.pop(context);
-                    } else {
-                      setState(() {
-                        hideemoji = !hideemoji;
-                      });
-                    }
-                    return Future.value();
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width -50,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25)
-                              ),
-                              child: TextFormField(
-                                onTap: () {},
-                                keyboardType: TextInputType.multiline,
-                                minLines: 1,
-                                maxLines: 3,
-                                controller: textarea,
-                                textAlignVertical: TextAlignVertical.center,
-                                focusNode: focusNode,
-                                decoration: InputDecoration(
-                                  hintText: 'Message',
-                                  contentPadding:
-                                      EdgeInsets.only(left: 3, right: 3),
-                                  suffixIcon: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      IconButton(
-                                          onPressed: () {
-                                            showModalBottomSheet(
-                                                context: context,
-                                                builder: (context) =>
-                                                    Bottommodal());
-                                          },
-                                         icon: Icon(Icons.attach_file)),
-                                      Visibility(
-                                        visible: isShow,
-                                        child: IconButton(
-                                          onPressed: () {
-                                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Cameraapp()));
-
-                                          },
-                                          icon: Icon(Icons.camera_alt),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  prefixIcon: IconButton(
-                                    onPressed: () {
-                                      focusNode.unfocus();
-                                      focusNode.canRequestFocus = true;
-                                      setState(() {
-                                        hideemoji = !hideemoji;
-                                      });
-                                    },
-                                    icon: Icon(Icons.emoji_emotions),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Visibility(
-                              visible: isShow,
-                              replacement: CircleAvatar(
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.send),
-                                ),
-                              ),
-                              child: CircleAvatar(
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.mic),
-
-                                ),
-                              ))
-                        ],
-                      ),
-                      MyEmoji(),
-                    ],
-                  ),
-                )),
+            // Align(
+            //     alignment: Alignment.bottomLeft,
+            //     child: WillPopScope(
+            //       onWillPop: () {
+            //         if (hideemoji == true) {
+            //           Navigator.pop(context);
+            //         } else {
+            //           setState(() {
+            //             hideemoji = !hideemoji;
+            //           });
+            //         }
+            //         return Future.value();
+            //       },
+            //       // child: Column(
+            //       //   mainAxisAlignment: MainAxisAlignment.end,
+            //       //   children: [
+            //       //     Row(
+            //       //       children: [
+            //       //         Container(
+            //       //           width: MediaQuery.of(context).size.width -50,
+            //       //           child: Card(
+            //       //             shape: RoundedRectangleBorder(
+            //       //               borderRadius: BorderRadius.circular(25)
+            //       //             ),
+            //       //             child: TextFormField(
+            //       //               onTap: () {},
+            //       //               keyboardType: TextInputType.multiline,
+            //       //               minLines: 1,
+            //       //               maxLines: 3,
+            //       //               controller: textarea,
+            //       //               textAlignVertical: TextAlignVertical.center,
+            //       //               focusNode: focusNode,
+            //       //               decoration: InputDecoration(
+            //       //                 hintText: 'Message',
+            //       //                 contentPadding:
+            //       //                     EdgeInsets.only(left: 3, right: 3),
+            //       //                 suffixIcon: Row(
+            //       //                   mainAxisSize: MainAxisSize.min,
+            //       //                   children: [
+            //       //                     IconButton(
+            //       //                         onPressed: () {
+            //       //                           showModalBottomSheet(
+            //       //                               context: context,
+            //       //                               builder: (context) =>
+            //       //                                   Bottommodal());
+            //       //                         },
+            //       //                        icon: Icon(Icons.attach_file)),
+            //       //                     Visibility(
+            //       //                       visible: isShow,
+            //       //                       child: IconButton(
+            //       //                         onPressed: () {
+            //       //                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Cameraapp()));
+            //       //
+            //       //                         },
+            //       //                         icon: Icon(Icons.camera_alt),
+            //       //                       ),
+            //       //                     )
+            //       //                   ],
+            //       //                 ),
+            //       //                 prefixIcon: IconButton(
+            //       //                   onPressed: () {
+            //       //                     focusNode.unfocus();
+            //       //                     focusNode.canRequestFocus = true;
+            //       //                     setState(() {
+            //       //                       hideemoji = !hideemoji;
+            //       //                     });
+            //       //                   },
+            //       //                   icon: Icon(Icons.emoji_emotions),
+            //       //                 ),
+            //       //               ),
+            //       //             ),
+            //       //           ),
+            //       //         ),
+            //       //         Visibility(
+            //       //             visible: isShow,
+            //       //             replacement: CircleAvatar(
+            //       //               child: IconButton(
+            //       //                 onPressed: () {},
+            //       //                 icon: Icon(Icons.send),
+            //       //               ),
+            //       //             ),
+            //       //             child: CircleAvatar(
+            //       //               child: IconButton(
+            //       //                 onPressed: () {},
+            //       //                 icon: Icon(Icons.mic),
+            //       //
+            //       //               ),
+            //       //             ))
+            //       //       ],
+            //       //     ),
+            //       //     // MyEmoji(),
+            //       //   ],
+            //       // ),
+            //     )),
           ],
         ),
       ),
@@ -250,83 +250,83 @@ class _PersonalchatState extends State<Personalchat> {
       // ),
     );
   }
-  Widget MyEmoji() {
-    return Container(
-      child: Offstage(
-        offstage: hideemoji,
-        child: SizedBox(
-            width: MediaQuery.of(context).size.width -20,
-            height: 250,
-            child: EmojiPicker(
-              textEditingController: message,
-            )),
-      ),
-    );
-  }
+  // Widget MyEmoji() {
+  //   return Container(
+  //     child: Offstage(
+  //       offstage: hideemoji,
+  //       child: SizedBox(
+  //           width: MediaQuery.of(context).size.width -20,
+  //           height: 250,
+  //           child: EmojiPicker(
+  //             textEditingController: message,
+  //           )),
+  //     ),
+  //   );
+  // }
 
-  Widget Bottommodal() {
-    return Container(
-      height: 250,
-      //  width: MediaQuery.of(context).size.width,
-      child: Card(
-        margin: EdgeInsets.all(10),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  iconcreation(Icons.file_copy, Colors.indigo, 'Document'),
-                  SizedBox(
-                    width: 40,
-                  ),
-                  iconcreation(Icons.camera_alt, Colors.pink, 'Camera',
-                  ),
-                  SizedBox(
-                    width: 40,
-                  ),
-                  iconcreation(Icons.insert_photo, Colors.purple, 'Gallery'),
-                ],
-              ),
-              SizedBox(width: 40,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  iconcreation(Icons.headset, Colors.orange, 'Audio'),
-                  SizedBox(
-                    width: 40,
-                  ),
-                  iconcreation(Icons.location_pin, Colors.green, 'Location'),
-                  SizedBox(
-                    width: 40,
-                  ),
-                  iconcreation(Icons.person, Colors.blue, 'Contact'),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+  // Widget Bottommodal() {
+  //   return Container(
+  //     height: 250,
+  //     //  width: MediaQuery.of(context).size.width,
+  //     child: Card(
+  //       margin: EdgeInsets.all(10),
+  //       child: Padding(
+  //         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
+  //         child: Column(
+  //           children: [
+  //             Row(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               children: [
+  //                 iconcreation(Icons.file_copy, Colors.indigo, 'Document'),
+  //                 SizedBox(
+  //                   width: 40,
+  //                 ),
+  //                 iconcreation(Icons.camera_alt, Colors.pink, 'Camera',
+  //                 ),
+  //                 SizedBox(
+  //                   width: 40,
+  //                 ),
+  //                 iconcreation(Icons.insert_photo, Colors.purple, 'Gallery'),
+  //               ],
+  //             ),
+  //             SizedBox(width: 40,),
+  //             Row(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               children: [
+  //                 iconcreation(Icons.headset, Colors.orange, 'Audio'),
+  //                 SizedBox(
+  //                   width: 40,
+  //                 ),
+  //                 iconcreation(Icons.location_pin, Colors.green, 'Location'),
+  //                 SizedBox(
+  //                   width: 40,
+  //                 ),
+  //                 iconcreation(Icons.person, Colors.blue, 'Contact'),
+  //               ],
+  //             ),
+  //           ],
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
-  Widget iconcreation(IconData icon, Color color, String text) {
-    return Column(
-      children: [
-        CircleAvatar(
-          radius: 30,
-          backgroundColor: color,
-          child: Icon( icon,
-            size: 29,
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        Text(text),
-      ],
-    );
-  }
+  // Widget iconcreation(IconData icon, Color color, String text) {
+  //   return Column(
+  //     children: [
+  //       CircleAvatar(
+  //         radius: 30,
+  //         backgroundColor: color,
+  //         child: Icon( icon,
+  //           size: 29,
+  //           color: Colors.white,
+  //         ),
+  //       ),
+  //       SizedBox(
+  //         height: 5,
+  //       ),
+  //       Text(text),
+  //     ],
+  //   );
+  // }
 }
