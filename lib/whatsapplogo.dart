@@ -47,10 +47,12 @@ class _logoState extends State<logo> {
               // width: MediaQuery.of(context).size.width-320,
             ),
             Text('Whatsapp'),
-            SizedBox(height: 300,),
+            SizedBox(height: 280,),
             Text('Form',
                         style: TextStyle(
                             fontSize: 18,fontWeight: FontWeight.bold),),
+            SizedBox(height: 8,),
+            Text('Flutter')
           ],
         ),
       ),

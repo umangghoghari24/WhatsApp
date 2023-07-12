@@ -20,9 +20,9 @@ class _personalsmsState extends State<personalsms> {
     TextEditingController message = TextEditingController();
     TextEditingController textarea = TextEditingController();
     TextEditingController emoji= TextEditingController();
-    late bool hideemoji = true;
+    late bool hideemoji = false;
     FocusNode focusNode = FocusNode();
-    bool isShow = true;
+    bool isShow = false;
 
     @override
     void initState() {
@@ -32,11 +32,11 @@ class _personalsmsState extends State<personalsms> {
       focusNode.addListener(() {
         if (focusNode.hasFocus) {
           setState(() {
-            hideemoji = true;
+            isShow = false;
           });
         } else {
           setState(() {
-            hideemoji = false;
+            isShow = true;
           });
         }
       });
@@ -75,7 +75,7 @@ class _personalsmsState extends State<personalsms> {
         leading: CircleAvatar(
           child: Text(widget.contacts.initials()),
           radius: 35,
-          // backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white60,
         ),
         title: Column(
           children: [
@@ -108,28 +108,37 @@ class _personalsmsState extends State<personalsms> {
           )
         ],
       ),
+
         body: Container(
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: [
-              // Image.network('https://mcdn.wallpapersafari.com/medium/27/32/jt4AoG.jpg',
-              //   height: MediaQuery.of(context).size.height,
-              //   width: MediaQuery.of(context).size.width,
-              //   fit: BoxFit.cover,
-              // ),
+              Image.network('https://mcdn.wallpapersafari.com/medium/27/32/jt4AoG.jpg',
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.cover,
+              ),
               ListView(),
               Align(
                   alignment: Alignment.bottomLeft,
                   child: WillPopScope(
                     onWillPop: () {
-                      if (hideemoji == true) {
-                        Navigator.pop(context);
-                      } else {
+                      if (isShow) {
                         setState(() {
-                          hideemoji = !hideemoji;
+                          isShow = false;
                         });
+                      } else {
+                        Navigator.pop(context);
                       }
-                      return Future.value();
+                      return Future.value(false);
+                      // if (hideemoji == true) {
+                      //   Navigator.pop(context);
+                      // } else {
+                      //   setState(() {
+                      //     hideemoji = !hideemoji;
+                      //   });
+                      // }
+                      // return Future.value();
                       },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -151,6 +160,7 @@ class _personalsmsState extends State<personalsms> {
                                   textAlignVertical: TextAlignVertical.center,
                                   focusNode: focusNode,
                                   decoration: InputDecoration(
+                                    border: InputBorder.none,
                                     hintText: 'Message',
                                     contentPadding:
                                     EdgeInsets.only(left: 3, right: 3),
@@ -170,7 +180,6 @@ class _personalsmsState extends State<personalsms> {
                                           child: IconButton(
                                             onPressed: () {
                                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Cameraapp()));
-
                                             },
                                             icon: Icon(Icons.camera_alt),
                                           ),
@@ -181,9 +190,8 @@ class _personalsmsState extends State<personalsms> {
                                       onPressed: () {
                                         focusNode.unfocus();
                                         focusNode.canRequestFocus = true;
-
                                         setState(() {
-                                          hideemoji = !hideemoji;
+                                          isShow = !isShow;
                                         });
                                       },
                                       icon: Icon(Icons.emoji_emotions),
@@ -204,12 +212,11 @@ class _personalsmsState extends State<personalsms> {
                                   child: IconButton(
                                     onPressed: () {},
                                     icon: Icon(Icons.mic),
-
                                   ),
                                 ))
                           ],
                         ),
-                        MyEmoji()
+                       isShow ?  MyEmoji() : Container(),
                       ],
                     ),
                   )),
