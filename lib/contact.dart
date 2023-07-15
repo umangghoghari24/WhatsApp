@@ -31,6 +31,7 @@ class _contactState extends State<contact> {
       Permission.contacts.request();
     }
   }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -69,7 +70,8 @@ class _contactState extends State<contact> {
                   child: Icon(
                     Icons.search,
                     color: Colors.white,
-                  )),
+                  )
+            ),
           PopupMenuButton(
                     icon: Icon(Icons.more_vert),
                     itemBuilder: (context) => [

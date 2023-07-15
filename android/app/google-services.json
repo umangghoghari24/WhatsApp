@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "520105008628",
+    "project_id": "myapplication-64b00",
+    "storage_bucket": "myapplication-64b00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520105008628:android:44992f8a05fac2fe122da1",
+        "android_client_info": {
+          "package_name": "com.umang.watshapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520105008628-ksajb195cvvgosn05ls87fn6von2alid.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqJ-9-Xjh1RGynUE1TlC_0n5ttpQuld2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520105008628-ksajb195cvvgosn05ls87fn6von2alid.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
