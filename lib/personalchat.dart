@@ -10,45 +10,45 @@ class Personalchat extends StatefulWidget {
 }
 
 class _PersonalchatState extends State<Personalchat> {
-  // FocusNode messagefocuce = FocusNode();
-  // TextEditingController message = TextEditingController();
-  // TextEditingController textarea = TextEditingController();
-  // TextEditingController emoji= TextEditingController();
-  // late bool hideemoji = true;
-  // FocusNode focusNode = FocusNode();
-  // bool isShow = true;
-  //
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //
-  //   focusNode.addListener(() {
-  //     if (focusNode.hasFocus) {
-  //       setState(() {
-  //         hideemoji = true;
-  //       });
-  //     } else {
-  //       setState(() {
-  //         hideemoji = false;
-  //       });
-  //     }
-  //   });
-  //   textarea.addListener(() {
-  //     if (textarea.text != '') {
-  //       setState(() {
-  //         isShow = false;
-  //       });
-  //       setState(() {
-  //         isShow = false;
-  //       });
-  //     } else {
-  //       setState(() {
-  //         isShow = true;
-  //       });
-  //     }
-  //   });
-  // }
+  FocusNode messagefocuce = FocusNode();
+  TextEditingController message = TextEditingController();
+  TextEditingController textarea = TextEditingController();
+  TextEditingController emoji= TextEditingController();
+  late bool hideemoji = true;
+  FocusNode focusNode = FocusNode();
+  bool isShow = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    focusNode.addListener(() {
+      if (focusNode.hasFocus) {
+        setState(() {
+          hideemoji = true;
+        });
+      } else {
+        setState(() {
+          hideemoji = false;
+        });
+      }
+    });
+    textarea.addListener(() {
+      if (textarea.text != '') {
+        setState(() {
+          isShow = false;
+        });
+        setState(() {
+          isShow = false;
+        });
+      } else {
+        setState(() {
+          isShow = true;
+        });
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

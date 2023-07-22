@@ -13,7 +13,7 @@ class personalsms extends StatefulWidget {
 }
 
 class _personalsmsState extends State<personalsms> {
-  @override
+  // @override
   Widget build(BuildContext context) {
 
     FocusNode  messagefocuce = FocusNode();
@@ -41,7 +41,7 @@ class _personalsmsState extends State<personalsms> {
         }
       });
       textarea.addListener(() {
-        if (textarea.text != '') {
+        if (textarea.text !='') {
           setState(() {
             isShow = false;
           });
@@ -205,13 +205,13 @@ class _personalsmsState extends State<personalsms> {
                                 replacement: CircleAvatar(
                                   child: IconButton(
                                     onPressed: () {},
-                                    icon: Icon(Icons.send),
+                                    icon: Icon(Icons.mic),
                                   ),
                                 ),
                                 child: CircleAvatar(
                                   child: IconButton(
                                     onPressed: () {},
-                                    icon: Icon(Icons.mic),
+                                    icon: Icon(Icons.send),
                                   ),
                                 ))
                           ],

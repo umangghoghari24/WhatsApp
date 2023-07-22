@@ -36,7 +36,7 @@ class _listview2State extends State<listview2> {
                     child: Text('6'),
                     decoration: const BoxDecoration(
                         color: Colors.black,
-                        borderRadius: BorderRadius.all(Radius.circular(25))
+                        borderRadius: BorderRadius.all(Radius.circular(20))
                     )
                 ),
               ],
@@ -56,13 +56,16 @@ class _listview2State extends State<listview2> {
                 IconButton(onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Cameraapp()));
                 },
-                    icon: Icon(Icons.camera_alt_outlined)),
+                    icon: Icon(Icons.camera_alt_outlined),
+                color: Colors.white,),
                 IconButton(onPressed: (){
                   print('Enter friend name');
                 },
-                    icon: Icon(Icons.search)),
+                    icon: Icon(Icons.search),
+                color: Colors.white,),
                 PopupMenuButton(
                   icon: Icon(Icons.more_vert),
+                    color: Colors.white,
                     itemBuilder: (context)=>[
                       PopupMenuItem(child: Text("New group")),
                       PopupMenuItem(child: Text("New Broadcast")),
