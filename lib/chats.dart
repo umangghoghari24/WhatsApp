@@ -41,8 +41,7 @@ class _ChatsState extends State<Chats> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-      Center(
+      body: Center(
         child: Visibility(visible: isloaded,
           replacement: Center(
             child: CircularProgressIndicator()),

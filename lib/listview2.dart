@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:umang2/chats.dart';
 import 'package:umang2/main.dart';
+import 'package:umang2/sliverAppBar.dart';
 import 'package:umang2/status.dart';
 import 'package:umang2/videocall.dart';
 
@@ -19,6 +20,8 @@ class _listview2State extends State<listview2> {
   ];
 
   var current_index=0;
+  bool showsliverAppBar = true;
+  late TabController tabController;
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +34,11 @@ class _listview2State extends State<listview2> {
           bottom: TabBar(tabs: [
             Row(
               children: [
-                Tab(text:"chats"),
+                Tab(text:"chats "),
                 Container(
-                    child: Text('6'),
+                    child: Text('5'),
                     decoration: const BoxDecoration(
-                        color: Colors.black,
+                        color: Colors.green,
                         borderRadius: BorderRadius.all(Radius.circular(20))
                     )
                 ),
@@ -59,7 +62,10 @@ class _listview2State extends State<listview2> {
                     icon: Icon(Icons.camera_alt_outlined),
                 color: Colors.white,),
                 IconButton(onPressed: (){
-                  print('Enter friend name');
+                  // print('Enter friend name');
+                  setState(() {
+                    showsliverAppBar = !showsliverAppBar;
+                  });
                 },
                     icon: Icon(Icons.search),
                 color: Colors.white,),
@@ -84,11 +90,12 @@ class _listview2State extends State<listview2> {
           ],
         ),
           body: TabBarView(
-            children: [
-              Chats(),
-              status(),
-              videocall(),
-            ],
+            // controller: tabController,
+            children: pages,
+            // Chats(),
+              // status(),
+              // videocall(),
+              //
           ),
         // bottomNavigationBar: BottomNavigationBar(
         //   selectedItemColor: Colors.red,
@@ -104,7 +111,7 @@ class _listview2State extends State<listview2> {
         //       label: 'Chats',
         //     ),
         //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.whatsapp_sharp),
+        //       icon: Icon(Icons.adjust_rounded),
         //       label: 'Status',
         //     ),
         //     BottomNavigationBarItem(
